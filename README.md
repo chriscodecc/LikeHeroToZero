@@ -40,12 +40,13 @@ pom.xml             # Maven Build-Datei
 2. Neue Datenbank anlegen, z. B. `likeherotozero`:  
    - In phpMyAdmin → „Neue Datenbank“ → `likeherotozero` → *Anlegen*.  
 3. Dump importieren:  
-   - phpMyAdmin → Datenbank `likeherotozero` auswählen → *Importieren* → Datei `db/all_databases_dump.sql` hochladen → *OK*.  
+   - phpMyAdmin → *Importieren* → Datei `db/all_databases_dump.sql` hochladen → *OK*.)
+     **WICHTIG!!!** Es darf **keine bestehende DB ausgewählt sein**, sonst werden die `CREATE DATABASE`-Befehle im Dump ignoriert!
 
 Oder über die Konsole:  
 
 ```bash
-mysql -u root -p likeherotozero < db/all_databases_dump.sql
+mysql -u root -p < db/all_databases_dump.sql
 ```
 
 ---
