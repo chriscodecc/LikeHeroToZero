@@ -20,7 +20,7 @@
 
     <!-- Welcome File List -->
     <welcome-file-list>
-        <welcome-file>index_2.xhtml</welcome-file>
+        <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>
     
     <filter>

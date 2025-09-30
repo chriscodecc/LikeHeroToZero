@@ -69,6 +69,15 @@ Beispielkonfiguration:
 
 ---
 
+## Projekt in Eclipse importieren
+
+1. Eclipse starten.  
+2. Menü **File → Import…** wählen.  
+3. **Existing Maven Project** auswählen.  
+4. Im Verzeichnisbaum den Projektordner `LikeHeroToZero` angeben.  
+5. Mit *Finish* bestätigen.  
+
+--
 ## Build & Deployment
 
 1. Projekt mit Maven bauen:  
@@ -92,3 +101,16 @@ startup.bat    # Windows
 ## Anwendung im Browser öffnen
 
 [http://localhost:8080/LikeHeroToZero](http://localhost:8080/LikeHeroToZero)
+
+--
+## Beispiel-Login-Daten
+
+Nach dem Datenbank-Import (`all_databases_dump.sql`) existieren bereits Test-User:  
+
+- **Admin-Zugang**  
+  Benutzername: `admin1`  
+  Passwort: `admin1`  
+
+- **Wissenschaftler-Zugang**  
+  Benutzername: `user1`  
+  Passwort: `user1`  
