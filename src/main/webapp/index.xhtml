@@ -1,0 +1,70 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<link rel="stylesheet" type="text/css" media="screen" href="style.css"/>
+	
+	<title>LikeHeroToZero2</title>
+</h:head>
+<body>
+	<ui:include src="/menu.xhtml" />
+	
+	<h:form id="formid"> 
+		<div class="container">
+			<div id="div_Menu">
+				<h:selectOneMenu value="#{countryManager.selectedCountry}"> 
+					<f:selectItems value="#{countryManager.countryList}" var="country" itemValue="#{country.countryCode}" itemLabel="#{country.countryName}"/> 
+				</h:selectOneMenu> 
+			</div>
+			<div id="div_button">
+				<h:commandButton value="Load" action="#{countryManager.updateChart}" update="formid:chartid"/> 
+				<!--  h:button id="loginbutton" value="Login" outcome="login.xhtml"></h:button-->
+			</div>
+			
+			<div id="div_chartid"> 
+				<p:lineChart id ="lineid" model="#{countryManager.lineChartModel}"/>
+			</div>
+			
+			<div id="div_lable">
+				<h:panelGroup styleClass="output_lab">
+				    <h:outputText value="1990" />
+				    <br />
+				    <h:outputText value="#{countryManager.getCountry().getDynamicDisplayValueYear(1990)}" />
+				</h:panelGroup>
+				<h:panelGroup styleClass="output_lab">
+				    <h:outputText value="2000" />
+				    <br />
+				    <h:outputText value="#{countryManager.getCountry().getDynamicDisplayValueYear(2000)}" />
+				</h:panelGroup>
+				<h:panelGroup styleClass="output_lab">
+				    <h:outputText value="2015" />
+				    <br />
+				    <h:outputText value="#{countryManager.getCountry().getDynamicDisplayValueYear(2015)}" />
+				</h:panelGroup>
+				<h:panelGroup styleClass="output_lab">
+				    <h:outputText value="2021" />
+				    <br />
+				    <h:outputText value="#{countryManager.getCountry().getDynamicDisplayValueYear(2021)}" />
+				</h:panelGroup>
+				<h:panelGroup styleClass="output_lab">
+				    <h:outputText value="2022" />
+				    <br />
+				    <h:outputText value="#{countryManager.getCountry().getDynamicDisplayValueYear(2022)}" />
+				</h:panelGroup>
+				<h:panelGroup styleClass="output_lab">
+				    <h:outputText value="2023" />
+				    <br />
+				    <h:outputText value="#{countryManager.getCountry().getDynamicDisplayValueYear(2023)}" />
+				</h:panelGroup>
+
+					
+			</div>		
+		</div>	
+	</h:form>
+
+</body>
+</html>
+

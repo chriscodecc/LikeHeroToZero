@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:p="http://primefaces.org/ui"
+  xmlns:f="http://xmlns.jcp.org/jsf/core"
+  >
+
+<h:head>
+	<link rel="stylesheet" type="text/css" media="screen" href="../style.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+	
+  <title>add Data</title>
+</h:head>
+
+<h:body>
+	<ui:include src="/menu.xhtml" />
+    <h:form id="addData-form">
+    <p:panel header="Add Data">
+	      <p>
+	        <h:outputText id="welcome-message"
+	          value="#{userManager.currentUser.firstName}!" />
+	      </p>
+	
+		    <p:messages id="messages" showDetail="false" />
+		    
+		 	<h:selectOneMenu value="#{countryManager.addselectedCountry}" > 
+					<f:selectItems value="#{countryManager.countryList}" var="country" itemValue="#{country.countryName}" itemLabel="#{country.countryName}"/> 
+					<p:ajax listener="#{countryManager.onCountryChange}" update="@form"  />
+			</h:selectOneMenu> 
+			
+			<h:selectOneMenu value="#{countryManager.addselectedYear}"> 
+					<f:selectItems value="#{countryManager.allYear}" itemValue="#{year}" var="year"/> 
+					<p:ajax listener="#{countryManager.onYearChange}" update="@form"  />
+			</h:selectOneMenu> 
+			
+        	<h:panelGrid id="textfield_pane" columns="3" cellpadding="5">
+	        	<p:outputLabel for="data-field" value="Co2 Data:" />
+	      		<p:inputText id="data-field" value="#{countryManager.addnewdata}"
+	          		required="true" label="data field">
+	         		<f:validateLength minimum="3" />
+	        	</p:inputText>
+	        	<p:message for="data-field" display="icon" />
+      		</h:panelGrid>
+        	
+			
+			 <p:commandButton value="Commit" action="#{countryManager.commitChangesInForm()}" update="addData-form"/>
+		    <p:commandButton value="Back" action="#{userManager.isLoggedInForwardHome()}" />
+		    
+		    <ui:fragment rendered="#{userManager.currentUser.admin}">
+		    	<h1> ADMIN</h1>
+		    	<p:dataTable id="datatable_id" value="#{countryManager.countryList_changes}" var="country">
+		    	<p:column> <f:facet name="header">Id</f:facet> #{country.id}</p:column>
+		    		<p:column> <f:facet name="header">Name</f:facet> #{country.countryName}</p:column>
+	    			<p:column><f:facet name="header">Code</f:facet> #{country.countryCode}</p:column>
+	    			<p:column><f:facet name="header">year</f:facet> #{country.year}</p:column>
+	    			<p:column><f:facet name="header">old data</f:facet> #{country.original_data}</p:column>
+	    			<p:column><f:facet name="header">new data</f:facet> #{country.new_data}</p:column>
+	    			<p:column><p:commandButton actionListener="#{countryManager.add}" icon="fas fa-check" update="addData-form"/></p:column>
+  					<p:column><p:commandButton actionListener="#{countryManager.remove}" icon="fas fa-times" update="addData-form" /></p:column>
+		    	</p:dataTable>
+		    	
+	
+		    	
+		    </ui:fragment>
+		    
+	 	</p:panel>
+  	</h:form>
+
+</h:body>
+</html>

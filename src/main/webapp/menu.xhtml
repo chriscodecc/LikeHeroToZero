@@ -1,0 +1,49 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+                
+	<nav>
+	    <ul>
+	        <!-- Home-Link -->
+	        <li>
+	            <h:link value="Home" outcome="/index.xhtml" styleClass="menu-link" />
+	        </li>
+	
+	        <!-- Für nicht angemeldete Benutzer -->
+	        <ui:fragment rendered="#{!userManager.isLoggedIn()}">
+	            <li>
+	                <h:link value="Login" outcome="/login.xhtml" styleClass="menu-link" />
+	            </li>
+	            <!-- <li>
+	                <h:link value="Backend" outcome="/addData.xhtml" styleClass="menu-link" />
+	            </li>-->
+	        </ui:fragment>
+	
+	        <!-- Für angemeldete Benutzer -->
+	        <ui:fragment rendered="#{userManager.isLoggedIn()}">
+	            <li>
+	            	<h:form>
+	                	<h:commandLink value="Logout" action="#{userManager.logout()}" styleClass="menu-link" />
+	            	</h:form>
+	            </li>
+	            <li>
+	            	  <h:link value="Add Data" outcome="/secured/addData.xhtml" styleClass="menu-link" />
+	            </li>
+	        </ui:fragment>
+	    </ul>
+	</nav>
+                
+    
+</ui:composition>
+<!--  -->
+
+<!--  <ul>
+            <li><a href="index_2.xhtml">home</a></li>
+            <ui:fragment rendered="#{!userManager.isLoggedIn()}">
+                <li><a href="login.xhtml">Login</a></li>
+                <li><a href="addData.xhtml">Backend</a></li>
+            </ui:fragment>
+            <ui:fragment rendered="#{userManager.isLoggedIn()}">
+                <li><h:commandLink styleClass="menu-link" value="Logout" action="#{userManager.logout()}" /></li>
+            </ui:fragment>
+        </ul> -->

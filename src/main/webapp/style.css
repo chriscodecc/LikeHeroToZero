@@ -1,0 +1,138 @@
+@charset "UTF-8";
+
+body {
+	background-color: #fff;
+}
+
+/* Stil für das gesamte Diagramm */
+.ui-chart {
+    background-color: rgb(225, 225, 225); /* Hintergrundfarbe des Diagramms */
+    border: 5px solid #000; /* Rahmen des Diagramms */
+    padding: 10px; /* Innenabstand des Diagramms */
+}
+
+/* Stil für die Datenpunkte */
+.ui-chart .ui-linechart-point {
+    background-color: #fff; /* Farbe der Datenpunkte */
+    border-radius: 10%; /* Runde Datenpunkte */
+}
+
+.container {
+
+	justify-content: center;
+    align-items: center;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#div_Menu{
+	margin-bottom: 0.2em;
+}
+
+#div_button{
+	margin-bottom: 1em;
+}
+
+#div_chartid{
+	width: 70%;
+	margin: auto;
+}
+
+#div_lable{
+	margin-top: 1em;
+
+}
+
+.output_lab{
+	display: inline-block;
+  	width: clamp(50px, 5vw, 150px);
+  	height: clamp(25px, 2vh, 100px);
+    margin: 1vw;
+    padding: 2px;
+    font-size: clamp(12px, 1.2vw, 24px);
+    text-align: center;
+}
+
+
+
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Navigation Hintergrund */
+nav {
+    background-color: #333;
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    margin-bottom: 1em;
+}
+
+/* Liste horizontal */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* horizontale Ausrichtung */
+    justify-content: center;
+}
+
+/* Listenelemente */
+nav ul li {
+    margin: 0 1em;
+}
+
+/* Links */
+nav ul li a, nav ul li h\:commandLink {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    transition: background 0.3s;
+    display: inline-block;
+}
+
+/* Hover-Effekt */
+nav ul li a:hover, nav ul li h\:commandLink:hover {
+    background-color: #555;
+}
+
+/* Speziell für JSF h:commandLink */
+h\:commandLink {
+    color: #fff;                 /* weiße Schrift */
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+/* Hover-Effekt für h:commandLink */
+h\:commandLink:hover {
+    background-color: #555;
+}
+
