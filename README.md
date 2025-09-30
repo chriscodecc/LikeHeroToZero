@@ -68,16 +68,6 @@ Beispielkonfiguration:
 ```
 
 ---
-
-## Projekt in Eclipse importieren
-
-1. Eclipse starten.  
-2. Menü **File → Import…** wählen.  
-3. **Existing Maven Project** auswählen.  
-4. Im Verzeichnisbaum den Projektordner `LikeHeroToZero` angeben.  
-5. Mit *Finish* bestätigen.  
-
---
 ## Build & Deployment
 
 1. Projekt mit Maven bauen:  
@@ -86,9 +76,11 @@ Beispielkonfiguration:
 mvn clean package
 ```
 
-2. Kopiere die erzeugte Datei `target/LikeHeroToZero.war` nach `TOMCAT_HOME/webapps/`  
+2. Kopiere die erzeugte Datei `target/LikeHeroToZero-0.1-SNAPSHOT` nach `TOMCAT_HOME/webapps/`  
 
-3. Tomcat starten:  
+3. `LikeHeroToZero-0.1-SNAPSHOT` unbennenen in `LikeHeroToZero`
+
+4. Tomcat starten:  
 
 ```bash
 cd TOMCAT_HOME/bin
@@ -98,9 +90,20 @@ startup.bat    # Windows
 
 ---
 
+## Projekt in Eclipse importieren
+
+1. Eclipse starten.  
+2. Menü **File → Import…** wählen.  
+3. **Existing Maven Project** auswählen.  
+4. Im Verzeichnisbaum den Projektordner `LikeHeroToZero` angeben.  
+5. Mit *Finish* bestätigen.  
+---
+
+
 ## Anwendung im Browser öffnen
 
 [http://localhost:8080/LikeHeroToZero](http://localhost:8080/LikeHeroToZero)
+[http://localhost:8080/LikeHeroToZero](http://localhost:8080/LikeHeroToZero-0.1-SNAPSHOT)
 
 --
 ## Beispiel-Login-Daten
