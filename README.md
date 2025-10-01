@@ -1,4 +1,4 @@
-# LikeHeroToZero
+# LikeHeroToZero 
 
 Dieses Projekt ist eine Java-Webanwendung (Jakarta EE / JSF) mit Hibernate und MySQL-Datenbank.  
 Sie läuft unter **Tomcat 10.0** und verwendet **Maven** als Build-Tool.  
@@ -118,4 +118,4 @@ Nach dem Datenbank-Import (`all_databases_dump.sql`) existieren bereits Test-Use
   Benutzername: `user1`  
   Passwort: `user1`  
 
-  <!-- snc -->
+<!--update-->
